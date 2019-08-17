@@ -1,0 +1,67 @@
+// buildscript 娴狅絿鐖滈崸妞捐厬閼存碍婀版导妯哄帥閹笛嗩攽
+buildscript {
+
+	// ext 閻€劋绨�规矮绠熼崝銊︼拷浣哥潣閹拷
+	ext {
+		springBootVersion = '2.0.0.M3'
+	}
+
+	// 娴ｈ法鏁ゆ禍鍝卆ven閻ㄥ嫪鑵戞径顔荤波鎼存挸寮稴pring閼奉亜绻侀惃鍕波鎼存搫绱欐稊鐔峰讲娴犮儲瀵氱�规艾鍙炬禒鏍︾波鎼存搫绱�
+	repositories {
+		// mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
+		maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+	}
+
+	// 娓氭繆绂嗛崗宕囬兇
+	dependencies {
+
+		// classpath 婢圭増妲戞禍鍡楁躬閹笛嗩攽閸忔湹缍戦惃鍕壖閺堫剚妞傞敍瀛媗assLoader 閸欘垯浜掓担璺ㄦ暏鏉╂瑤绨烘笟婵婄妞わ拷
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+// 娴ｈ法鏁ら幓鎺嶆
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+// 閹稿洤鐣炬禍鍡欐晸閹存劗娈戠紓鏍槯閺傚洣娆㈤惃鍕閺堫剨绱濇妯款吇閺勵垱澧﹂幋鎰啊 jar 閸栵拷
+group = 'com.bzh.spring-cloud'
+version = '1.0.0'
+
+// 閹稿洤鐣剧紓鏍槯 .java 閺傚洣娆㈤惃锟� JDK 閻楀牊婀�
+sourceCompatibility = 1.8
+
+// 娴ｈ法鏁ゆ禍鍝卆ven閻ㄥ嫪鑵戞径顔荤波鎼存挸寮稴pring閼奉亜绻侀惃鍕波鎼存搫绱欐稊鐔峰讲娴犮儲瀵氱�规艾鍙炬禒鏍︾波鎼存搫绱�
+repositories {
+	//mavenCentral()
+	maven { url "https://repo.spring.io/snapshot" }
+	maven { url "https://repo.spring.io/milestone" }
+	maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+}
+
+ext {
+	springCloudVersion = 'Finchley.M2'
+}
+
+// 娓氭繆绂嗛崗宕囬兇
+dependencies {
+
+	// 鐠囥儰绶风挧鏍暏娴滃海绱拠鎴︽▉濞堬拷
+	compile('org.springframework.boot:spring-boot-starter-web')
+	
+	// Eureka Client
+	compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+
+	// 鐠囥儰绶风挧鏍暏娴滃孩绁寸拠鏇㈡▉濞堬拷
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
