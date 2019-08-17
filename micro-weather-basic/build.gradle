@@ -1,0 +1,66 @@
+// buildscript 浠ｇ爜鍧椾腑鑴氭湰浼樺厛鎵ц
+buildscript {
+
+	// ext 鐢ㄤ簬瀹氫箟鍔ㄦ�佸睘鎬�
+	ext {
+		springBootVersion = '2.0.0.M4'
+	}
+
+	// 浣跨敤浜哅aven鐨勪腑澶粨搴撳強Spring鑷繁鐨勪粨搴擄紙涔熷彲浠ユ寚瀹氬叾浠栦粨搴擄級
+	repositories {
+		// mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
+		maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+	}
+
+	// 渚濊禆鍏崇郴
+	dependencies {
+
+		// classpath 澹版槑浜嗗湪鎵ц鍏朵綑鐨勮剼鏈椂锛孋lassLoader 鍙互浣跨敤杩欎簺渚濊禆椤�
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+// 浣跨敤鎻掍欢
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+// 鎸囧畾浜嗙敓鎴愮殑缂栬瘧鏂囦欢鐨勭増鏈紝榛樿鏄墦鎴愪簡 jar 鍖�
+group = 'com.bzh.spring-cloud'
+version = '1.0.0'
+
+// 鎸囧畾缂栬瘧 .java 鏂囦欢鐨� JDK 鐗堟湰
+sourceCompatibility = 1.8
+
+// 浣跨敤浜哅aven鐨勪腑澶粨搴撳強Spring鑷繁鐨勪粨搴擄紙涔熷彲浠ユ寚瀹氬叾浠栦粨搴擄級
+repositories {
+	//mavenCentral()
+	maven { url "https://repo.spring.io/snapshot" }
+	maven { url "https://repo.spring.io/milestone" }
+	maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+}
+
+// 渚濊禆鍏崇郴
+dependencies {
+
+	// 璇ヤ緷璧栫敤浜庣紪璇戦樁娈�
+	compile('org.springframework.boot:spring-boot-starter-web')
+	
+	// HttpClient
+	compile('org.apache.httpcomponents:httpclient:4.5.3')
+	
+	// Redis
+	compile('org.springframework.boot:spring-boot-starter-data-redis')
+	
+	// Quartz
+	compile('org.springframework.boot:spring-boot-starter-quartz')
+	
+	// 添加 Spring Boot Thymeleaf Starter 的依赖
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+
+	// 璇ヤ緷璧栫敤浜庢祴璇曢樁娈�
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}

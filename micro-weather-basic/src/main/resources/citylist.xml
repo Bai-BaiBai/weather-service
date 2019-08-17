@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	全国天气根节点：http://flash.weather.com.cn/wmaps/xml/china.xml  内带cityKey
+	具体某省的天气节点：http://flash.weather.com.cn/wmaps/xml/xxx.xml
+-->
+<c c1="0">
+	<d d1="101010100" d2="北京" d3="beijing" d4="北京" />
+	<d d1="101070201" d2="大连" d3="dalian" d4="辽宁" />
+	<d d1="101020100" d2="上海" d3="shanghai" d4="上海" />
+	<d d1="101280601" d2="深圳" d3="shenzhen" d4="深圳" />
+	<d d1="101280101" d2="广州" d3="guangzhou" d4="广东" />
+	<d d1="101090101" d2="石家庄" d3="shijiazhuang" d4="河北" />
+	<d d1="101090501" d2="唐山" d3="tangshan" d4="河北" />
+	<d d1="101090201" d2="保定" d3="baoding" d4="河北" />
+	<d d1="101090301" d2="张家口" d3="zhangjiakou" d4="河北" />
+	<d d1="101090402" d2="承德" d3="chengde" d4="河北" />
+	<d d1="101090601" d2="廊坊" d3="langfang" d4="河北" />
+	<d d1="101090701" d2="沧州" d3="cangzhou" d4="河北" />
+	<d d1="101090801" d2="衡水" d3="hengshui" d4="河北" />
+	<d d1="101090901" d2="邢台" d3="xingtai" d4="河北" />
+	<d d1="101091001" d2="邯郸" d3="handan" d4="河北" />
+	<d d1="101091101" d2="秦皇岛" d3="qinhuangdao" d4="河北" />
+</c>
